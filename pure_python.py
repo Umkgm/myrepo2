@@ -53,3 +53,12 @@ for c in sorted(totals.keys()):
     avg = totals[c] / counts[c]
     print(c, round(avg, 2))
 print(f"행의 수: {count}")
+
+def get_movie_audience(date, title):
+    """해당 날짜의 영화 관객 수를 문자열로 반환한다."""
+    for movie in movies:
+        if movie["movieNm"] == title:
+            audience = int(movie["audiCnt"])
+            return f"{audience:,}명"
+
+    return f"'{title}' 은(는) {date} 순위에 없습니다."
